@@ -1,8 +1,5 @@
 # coding=utf-8
-from future import standard_library
-standard_library.install_aliases()
 
-from urllib.parse import urljoin
 from collections import OrderedDict
 from contextlib import closing
 from builtins import next
@@ -10,13 +7,16 @@ from builtins import str
 import re
 
 try:
-    from urllib.parse import urlparse
+    from urllib.parse import urlparse, urljoin
 except ImportError:
-    from urlparse import urlparse
+    from urlparse import urlparse, urljoin
 try:
     from html import unescape
 except ImportError:
-    from html.parser import HTMLParser
+    try:
+        from html.parser import HTMLParser
+    except:
+        from HTMLParser import HTMLParser
     parser = HTMLParser()
     unescape = parser.unescape
 
