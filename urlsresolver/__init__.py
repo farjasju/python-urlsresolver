@@ -21,9 +21,6 @@ except ImportError:
     unescape = parser.unescape
 
 
-__version__ = (1, 2, 0)
-__author__ = 'Alexandr Shurigin (https://github.com/phpdude/)'
-
 # HTML tags syntax http://www.w3.org/TR/html-markup/syntax.html
 TAG_ATTRIBUTES_REGEX = \
     r"(?:\s+%(attr)s\s*=\s*\"%(dqval)s\")|" \
